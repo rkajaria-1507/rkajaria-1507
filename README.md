@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Raghav Kajaria</h1>
-<h3 align="center">Data & Automation Enthusiast | Python Developer | Lifelong Learner</h3>
+<h3 align="center">Backend & ML Systems Engineer | Data-Driven Builder | Automation-Focused Developer</h3>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/raghav-kajaria" target="_blank">
@@ -11,66 +11,121 @@
   <a href="https://github.com/rkajaria-1507" target="_blank">
     <img src="https://img.shields.io/github/followers/rkajaria-1507?label=Follow&style=social" />
   </a>
+  <a href="https://raghav-kajaria.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white" />
+  </a>
 </p>
 
 ---
 
-### 👨‍💻 About Me
+## 👨‍💻 About Me
 
-- 🔭 Currently pursuing **B.Sc. in Computer Science** at FLAME University, Pune  
-- 💼 Product Intern @ **Reloy** | Former Backend Intern @ **NowPurchase**
-- 🤖 I love building with **Python, ML, automation, and backend tools**
-- 📊 Passionate about data, real-world insights, and simplifying complex workflows
-- 🎯 Currently exploring **Streamlit, Zapier, Freshdesk automation, and more**
-- 📬 Reach out to me via [LinkedIn](https://www.linkedin.com/in/raghav-kajaria) or [Email](mailto:raghavkajaria67@gmail.com)
-
----
-
-### 🛠️ Tech Stack
-
-![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
-![C++](https://img.shields.io/badge/-C++-333333?style=flat&logo=c%2b%2b)
-![Streamlit](https://img.shields.io/badge/-Streamlit-333333?style=flat&logo=streamlit)
-![Zapier](https://img.shields.io/badge/-Zapier-FF4A00?style=flat&logo=zapier&logoColor=white)
-![Git](https://img.shields.io/badge/-Git-333333?style=flat&logo=git)
-![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django)
-![MySQL](https://img.shields.io/badge/-MySQL-333333?style=flat&logo=mysql)
-![Freshdesk](https://img.shields.io/badge/-Freshdesk-28C101?style=flat&logo=freshworks)
-![Premiere Pro](https://img.shields.io/badge/-Premiere_Pro-9999FF?style=flat&logo=adobe-premiere-pro)
+- 🎓 Computer Science student at **FLAME University (2022–2026)**
+- 🧠 Focused on **backend systems, distributed architectures, and production ML pipelines**
+- 🏗️ Experience building **real-world production systems across Scala, FastAPI, Kafka, and PostgreSQL**
+- 🤖 Worked on **end-to-end ML lifecycle systems including forecasting + MLOps (MLflow)**
+- 📦 Strong interest in **event-driven systems, automation, and scalable backend design**
+- 📬 Open to **Backend / Software / Data Engineering / ML Systems roles**
 
 ---
 
-### 🚀 Projects
+## 🧠 What I Do (Engineering Focus)
 
-Here are a few projects I've worked on. Check out my [pinned repos](https://github.com/rkajaria-1507?tab=repositories) for more!
+I build systems across three layers:
 
-- **📊 Expensly – Expense Management App**  
-  Multi-user Streamlit app with authentication, admin dashboards, and CSV features  
-  _Python, Streamlit, Plotly_
+### Backend Systems
+- REST API design
+- Authentication + RBAC systems
+- Database schema design
+- Scalable service architecture
+- Event-driven workflows (Kafka-based systems)
 
-- **📈 Vehicle Data Analysis**  
-  C++ project analyzing car sales trends and market insights using stats  
-  _C++, Data Analysis_
+### ML / Data Systems
+- Forecasting models (XGBoost-based production deployment)
+- Feature engineering pipelines
+- Model tracking & reproducibility (MLflow)
+- Meta-learning research systems
 
-- **📉 Trading Simulator**  
-  Stock trading simulation with dynamic prices and portfolio updates  
-  _C++_
+### Automation & Integration Systems
+- Freshdesk / ClickUp / WebEngage integrations
+- Workflow automation via APIs + Zapier
+- Reducing operational manual effort in real systems
 
 ---
 
-### 📊 GitHub Stats
+## 🏢 Experience
+
+### Avlino — Software Engineering & Data Science Intern (2025)
+- Built a real-time full-stack system using **Scala, Play Framework, Kafka, MongoDB**
+- Deployed **XGBoost forecasting model** for port gate truck traffic prediction
+- Implemented full **MLOps pipeline using MLflow** (tracking, versioning, deployment)
+- Independently ramped up on Scala + Finatra and contributed directly to production code
+
+### Reloy — Product Engineering Intern (2024)
+- Automated **Freshdesk ticket creation via API**, reducing onboarding time by ~15%
+- Built **ClickUp–WebEngage integration using Zapier**, eliminating duplicate workflows
+- Fixed production **LeadSquared scraping duplication issue**
+- Shipped backend + JS improvements improving self-service workflows
+
+---
+
+## 🚀 Projects
+
+### BAFL — Student Archery Management System
+- FastAPI + PostgreSQL backend with modular architecture
+- JWT authentication with role-based access control
+- ORM-based schema design using SQLAlchemy
+- CI/CD-backed deployment with automated testing
+
+### Expensly — Multi-User Financial Management App
+- Multi-role expense tracking system (admin + users)
+- Interactive dashboards using Plotly
+- CSV import/export pipeline for financial data portability
+- Streamlit-based production deployment
+
+---
+
+## 🔬 Research
+
+### Meta-Learning for Optimal Imputation Selection
+- Built system for selecting best missing-value imputation method automatically
+- Engineered 90+ meta-features across datasets
+- Simulated MCAR / MAR / MNAR missingness patterns at scale
+- Trained RF / GBM / ANN meta-model achieving ~85% Top-1 accuracy
+- Direct application: **AutoML preprocessing optimization**
+
+---
+
+## 🛠️ Tech Stack
+
+**Languages**
+Python, Scala, SQL, JavaScript, TypeScript, C++
+
+**Backend & Systems**
+FastAPI, Django, Play Framework, Node.js, Kafka, PostgreSQL, MongoDB
+
+**ML / Data**
+MLflow, XGBoost, Pandas, NumPy, Scikit-learn
+
+**DevOps / Tools**
+Docker, Git, CI/CD, REST APIs, Zapier, Freshdesk APIs
+
+---
+
+## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rkajaria-1507&show_icons=true&theme=radical" alt="Raghav's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=rkajaria-1507&show_icons=true&theme=radical" />
   <br />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rkajaria-1507&layout=compact&theme=radical" />
 </p>
 
 ---
 
-### ⚡ Fun Fact
+## ⚡ Engineering Philosophy
 
-> I love working with automation tools that eliminate manual work — I believe everything repetitive can (and should) be optimized.
-
----
-
+- Build systems, not scripts
+- Optimize for reliability over complexity
+- Prefer scalable architecture over quick fixes
+- Automate repetitive workflows aggressively
+- Design for production, not prototypes
