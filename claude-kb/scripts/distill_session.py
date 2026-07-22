@@ -44,6 +44,28 @@ def _clean(text: str) -> str:
     return text.strip()
 
 
+# Openers that usually mark a short "here's what I'll do next" narration line
+# rather than a substantive finding or decision.
+_NARRATION_OPENERS = (
+    "let me", "now i", "now the", "now let", "next,", "first,",
+    "starting with", "let's", "alright", "great", "perfect", "done",
+)
+
+
+def _is_substantive(text: str) -> bool:
+    """Keep findings/decisions/summaries; drop short action-narration preambles."""
+    t = text.strip()
+    if not t:
+        return False
+    first = t.splitlines()[0].strip()
+    # "Here's what I'll do next:" style preambles.
+    if first.endswith(":") and len(t) < 120:
+        return False
+    if len(t) < 90 and first.lower().startswith(_NARRATION_OPENERS):
+        return False
+    return True
+
+
 def _iter_records(path: str):
     with open(path, "r", encoding="utf-8") as fh:
         for line in fh:
@@ -166,8 +188,9 @@ def distill(path: str) -> dict:
         "files_touched": sorted(files_touched),
         "errors": errors,
         # Highlights = the assistant's own summary text, which is where the
-        # "what we learned / decided" content actually lives.
-        "highlights": assistant_texts,
+        # "what we learned / decided" content actually lives — filtered to drop
+        # short next-step narration so takeaways stay signal-dense.
+        "highlights": [t for t in assistant_texts if _is_substantive(t)],
     }
     return entry
 
