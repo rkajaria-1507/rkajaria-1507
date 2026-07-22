@@ -1,0 +1,20 @@
+{
+  "_comment": "Merge the `hooks` block into your GLOBAL config at ~/.claude/settings.json to capture EVERY local Claude Code session automatically. Set CLAUDE_KB_DIR to your local knowledge-base checkout. The SessionEnd hook fires when a session ends; the Stop hook is a fallback that fires when a turn completes.",
+  "env": {
+    "CLAUDE_KB_DIR": "/ABSOLUTE/PATH/TO/your-claude-kb",
+    "CLAUDE_KB_PUSH": "1",
+    "CLAUDE_KB_LLM": "0"
+  },
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_KB_DIR/hooks/on_session_end.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

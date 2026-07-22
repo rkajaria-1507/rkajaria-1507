@@ -1,0 +1,20 @@
+{
+  "_comment": "For Claude Code on the WEB (ephemeral containers) OR any repo where you want per-project capture, commit this as `.claude/settings.json` in that repo. Because web containers are wiped on recycle, CLAUDE_KB_PUSH must be 1 and CLAUDE_KB_DIR must point at a checked-out clone of your (ideally private) knowledge-base repo so the entry is pushed before the container dies. Adjust the paths for the web working directory.",
+  "env": {
+    "CLAUDE_KB_DIR": "/home/user/your-claude-kb",
+    "CLAUDE_KB_PUSH": "1",
+    "CLAUDE_KB_LLM": "0"
+  },
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_KB_DIR/hooks/on_session_end.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
