@@ -1,0 +1,112 @@
+# SSEI content audit - crawl configuration.
+#
+# Seeds are the URLs search-index recon CONFIRMED as real (they appeared as
+# indexed results). Anything unverified is listed under `# unverified` so a
+# 404 in the manifest is informative rather than confusing.
+
+seeds:
+  # --- entry points ---
+  - https://ssei.co.in/
+  - https://ssei.co.in/courses
+  - https://ssei.co.in/courses?programme=FRM
+  - https://ssei.co.in/courses?programme=CFA
+
+  # --- FRM (the target content) -------------------------------------
+  # All CONFIRMED by search-index recon: each appeared as an indexed result
+  # with a title. See ../research/frm-url-inventory.md for provenance.
+  - https://ssei.co.in/courses/frm
+  - https://ssei.co.in/courses/195            # FRM Part 1
+  - https://ssei.co.in/products/FRM
+  - https://ssei.co.in/product/frmpart1
+  - https://ssei.co.in/product/frmpart1new
+  - https://ssei.co.in/product/frm-part-2
+  - https://ssei.co.in/product/frmpart2
+  - https://ssei.co.in/product/frmpart1-returningstudent-module
+  - https://ssei.co.in/product/frm-part-1-for-cfa-students
+  - https://ssei.co.in/product/frm-stock-market
+  # NOTE: the literal '&' below is part of the path, not a query separator.
+  # It is intentional and must not be escaped -- the site really serves this.
+  - https://ssei.co.in/product/frmpart1&part2combo
+  - https://courses.ssei.co.in/product/frm-part-1
+  - https://courses.ssei.co.in/product/frm-part-2
+  - https://courses.ssei.co.in/product/frmpart1-returningstudent-module
+  - https://courses.ssei.co.in/product/frm-part-1-for-cfa-students
+  - https://courses.ssei.co.in/product/frmpart1&part2combo
+  - https://courses.ssei.co.in/product/cfal1forfrmstudents
+  - https://courses.ssei.co.in/products/FRM
+
+  # --- CFA (the reference landing page to mirror) ---
+  - https://ssei.co.in/cfa/                   # unverified: given in the brief,
+                                              # never seen in the search index
+  - https://sseiadmission.ssei.co.in/cfa/     # the CFA lander that IS indexed
+  - https://ssei.co.in/cfacourse
+  - https://ssei.co.in/chartered-financial-analyst-cfa-program
+  - https://ssei.co.in/products/CFA
+
+  # --- staging rebuild, different information architecture ---
+  # Uncomment deliberately: this is a pre-release environment, and crawling it
+  # is a separate decision from crawling production.
+  # - https://betassei.co.in/exam/cfa/level-2
+
+# Suffix-matched, so every *.ssei.co.in subdomain (www, courses, store,
+# sseiadmission, lms) is in scope from one entry.
+allowed_hosts:
+  - ssei.co.in
+
+# www mirrors the apex byte-for-byte; folding them halves the crawl and stops
+# every page being archived twice under two spellings.
+host_aliases:
+  www.ssei.co.in: ssei.co.in
+
+# Tracking parameters only. Content facets (programme, level, subjectNames)
+# are deliberately NOT dropped -- they select genuinely different pages. They
+# are bounded by max_urls_per_path_template instead.
+drop_params:
+  - utm_source
+  - utm_medium
+  - utm_campaign
+  - utm_term
+  - utm_content
+  - gclid
+  - fbclid
+  - msclkid
+  - ref
+  - referrer
+
+collapse_trailing_slash: false
+
+# --- bounds -------------------------------------------------------------
+max_pages: 1500
+max_depth: 6
+# The /courses faceted view is a combinatorial URL space. This cap is what
+# keeps it from consuming the entire crawl budget.
+max_urls_per_path_template: 150
+
+# --- politeness ---------------------------------------------------------
+# 1 req/s per host with 3 workers. Raise only if you own the origin and know
+# it can take it; this is an education site, likely on shared hosting.
+requests_per_second: 1.0
+concurrency: 3
+timeout_seconds: 30.0
+max_retries: 4
+user_agent: "ssei-content-audit/1.0 (internal content inventory)"
+obey_robots: true
+
+# --- assets -------------------------------------------------------------
+fetch_assets: true
+max_asset_bytes: 26214400   # 25 MB
+max_page_bytes: 10485760    # 10 MB
+
+keywords:
+  - FRM
+  - "FRM Part 1"
+  - "FRM Part 2"
+  - "Financial Risk Manager"
+  - GARP
+
+out_dir: data
+
+# Sitemap discovery bounds. A sitemap index can fan out to hundreds of nested
+# documents; these caps keep discovery from consuming the whole run.
+max_sitemaps: 40
+max_sitemap_urls: 5000
